@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pewarisan Class Buku</title>
+</head>
+<body>
+    <h4>Menggunakan metode pewarisan untuk mengisi identitas buku</h4>
+    <p id="hasil"></p>
+
+    <script>
+        class Buku {
+            constructor(idBuku, judulBuku) {
+                this.idBuku = idBuku
+                this.judulBuku = judulBuku
+            }
+            tampil() {
+                return (
+                    "Identitas buku adalah " + this.idBuku + "<br>"
+                    + "Judul buku adalah " + this.judulBuku + "<br>"
+                )
+            }
+        }
+
+        class Author extends Buku {
+            constructor(idBuku, judulBuku, pengarang) {
+                super(idBuku,judulBuku)
+                this.pengarang = pengarang
+            }
+            show() {
+                return this.tampil() + "Pengarangnya adalah " + this.pengarang + "<br>"
+            }
+        }
+
+        let bukuKu = new Author("001", "Memori Sendja", "Petruk")
+        document.getElementById("hasil").innerHTML = bukuKu.show()
+
+    </script>
+
+</body>
+</html>
