@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh-object-2</title>
+</head>
+<body>
+    <p id="namaLengkap"></p>
+    <p id="dataArray"></p>
+    <script>
+        let orang = {
+                namaDepan: "Aziz",
+                namaBelakang: "Hussein",
+                warnaMata: "hijau",
+                namaLengkap : function() {
+                    return this.namaDepan + " " + this.namaBelakang;
+                }
+            }
+        
+            const namaLengkap = document.getElementById("namaLengkap")
+
+            namaLengkap.innerHTML = orang.namaLengkap()
+        
+        // merubah object menjadi array
+        let arrayOrang = Object.values(orang)
+        document.getElementById("dataArray").innerHTML = arrayOrang;
+
+    </script>
+</body>
+</html>

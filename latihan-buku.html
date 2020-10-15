@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku-buku</title>
+</head>
+<body>
+    <h4>Id Buku, Judul Buku dan Pengarang</h4>
+    <p id="hasil">
+
+    </p>
+
+    <script>
+        class Buku {
+            constructor(idBuku, judulBuku, pengarang){
+                this.idBuku = idBuku
+                this.judulBuku = judulBuku
+                this.pengarang = pengarang
+            }
+        }
+        const hasil = document.getElementById("hasil")
+        let dataBuku = ""
+        objBuku = new Buku("001", "Memori Pagi", "Semar")
+        dataBuku = dataBuku +
+            "Identitas Buku adalah " + objBuku.idBuku + "<br>" +
+            "Judul Buku adalah " + objBuku.judulBuku + "<br>" +
+            "Pengarang Buku adalah " + objBuku.pengarang + "<br>"
+        
+        objBuku2 = new Buku("002", "Memori Bedug", "Gareng")
+        dataBuku = dataBuku + "<hr>" +
+                "Identitas Buku adalah " + objBuku2.idBuku + "<br>" +
+                "Judul Buku adalah " + objBuku2.judulBuku + "<br>" +
+                "Pengarang Buku adalah " + objBuku2.pengarang + "<br>"
+        
+        hasil.innerHTML = dataBuku
+    </script>
+
+</body>
+</html>

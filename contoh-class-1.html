@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Class</title>
+</head>
+<body>
+    <h4>Ini adalah contoh Class</h4>
+    <p id="hasil"></p>
+
+    <script>
+        class Mahasiswa  {
+            constructor (nim, namaDepan, namaBelakang, umur) {
+                this.nim = nim
+                this.namaDepan = namaDepan
+                this.namaBelakang = namaBelakang
+                this.umur = umur
+            }
+            getNim() {
+                return this.nim
+            }
+            getNamaDepan() {
+                return this.namaDepan
+            }
+            getNamaBelakang() {
+                return this.namaBelakang
+            }
+            getUmur() {
+                return this.umur
+            }
+        }
+
+        objMhs = new Mahasiswa("001", "Aziz", "Hussein", 24)
+        const hasil = document.getElementById("hasil")
+        let dataMhs = ""
+
+        dataMhs =
+            "NIM = " + objMhs.getNim() + "<br>" +
+            "Nama Depan = " + objMhs.getNamaDepan() + "<br>" +
+            "Nama Belakang = " + objMhs.getNamaBelakang() + "<br>" +
+            "Umur = " + objMhs.getUmur() + "<br>"
+
+        objMhs2 = new Mahasiswa("002", "Gunawan", "Sugiono", 18)
+        dataMhs = dataMhs + "<hr>" +
+            "NIM = " + objMhs2.getNim() + "<br>" +
+            "Nama Depan = " + objMhs2.getNamaDepan() + "<br>" +
+            "Nama Belakang = " + objMhs2.getNamaBelakang() + "<br>" +
+            "Umur = " + objMhs2.getUmur()+ "<br>"
+        hasil.innerHTML = dataMhs
+    </script>
+</body>
+</html>
