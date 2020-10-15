@@ -9,27 +9,31 @@
     <p id="hasil"></p>
 
     <script>
-        class Bilangan {
+        var theList = []
+        class Numbers {
             constructor(angka1, angka2, angka3) {
                 this.angka1 = angka1
                 this.angka2 = angka2
                 this.angka3 = angka3
-                var numbers = [this.angka1, this.angka2, this.angka3]
+                this.pushToTheList = function(){
+                    theList.push(this.angka1, this.angka2, this.angka3)
+                }
+                this.pushToTheList()
             }
             minValue(){
-                let min = this.numbers[0]
-                for(var i = 0; i < this.numbers.length; i++){
-                    if(this.numbers[i] < min){
-                        min = this.numbers[i]
+                let min = theList[0]
+                for(var i = 0; i < theList.length; i++){
+                    if(theList[i] < min){
+                        min = theList[i]
                     }
                 }
                 return "Nilai minimum adalah " + min
             }
             maxValue(){
-                let max = this.numbers[0]
-                for (var i = 0; i < this.numbers.length; i++) {
-                    if (this.numbers[i] > max) {
-                        max = this.numbers[i]
+                let max = theList[0]
+                for (var i = 0; i < theList.length; i++) {
+                    if (theList[i] > max) {
+                        max = theList[i]
                     }
                 }
                 return "Nilai max adalah " + max
@@ -37,8 +41,9 @@
         }
 
         const hasil = document.getElementById("hasil")
-        let bil = new Bilangan(6, -3, 1)
-        hasil.innerHTML = bil.minValue() + "<br>" + bil.maxValue(6)
+        const number = new Numbers(6, -3, 1)
+        
+        hasil.innerHTML = number.minValue() + "<br>" + number.maxValue(6)
     </script>
 </body>
 </html>
