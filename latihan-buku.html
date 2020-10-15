@@ -18,22 +18,18 @@
                 this.judulBuku = judulBuku
                 this.pengarang = pengarang
             }
+            tampil(){
+                return (
+                    "Identitas buku adalah " + this.idBuku + "<br>"
+                    + "Judul buku adalah " + this.judulBuku + "<br>"
+                    + "Pengarang buku adalah " + this.pengarang + "<br>"
+                )
+            }
         }
         const hasil = document.getElementById("hasil")
-        let dataBuku = ""
-        objBuku = new Buku("001", "Memori Pagi", "Semar")
-        dataBuku = dataBuku +
-            "Identitas Buku adalah " + objBuku.idBuku + "<br>" +
-            "Judul Buku adalah " + objBuku.judulBuku + "<br>" +
-            "Pengarang Buku adalah " + objBuku.pengarang + "<br>"
+        var objBuku = new Buku("001", "Memori Pagi", "Semar")
         
-        objBuku2 = new Buku("002", "Memori Bedug", "Gareng")
-        dataBuku = dataBuku + "<hr>" +
-                "Identitas Buku adalah " + objBuku2.idBuku + "<br>" +
-                "Judul Buku adalah " + objBuku2.judulBuku + "<br>" +
-                "Pengarang Buku adalah " + objBuku2.pengarang + "<br>"
-        
-        hasil.innerHTML = dataBuku
+        hasil.innerHTML = objBuku.tampil()
     </script>
 
 </body>
