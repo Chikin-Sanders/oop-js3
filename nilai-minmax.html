@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai Min dan Max</title>
+</head>
+<body>
+    <p id="hasil"></p>
+
+    <script>
+        class Bilangan {
+            constructor(angka1, angka2, angka3) {
+                this.angka1 = angka1
+                this.angka2 = angka2
+                this.angka3 = angka3
+                var numbers = [this.angka1, this.angka2, this.angka3]
+            }
+            minValue(){
+                let min = this.numbers[0]
+                for(var i = 0; i < this.numbers.length; i++){
+                    if(this.numbers[i] < min){
+                        min = this.numbers[i]
+                    }
+                }
+                return "Nilai minimum adalah " + min
+            }
+            maxValue(){
+                let max = this.numbers[0]
+                for (var i = 0; i < this.numbers.length; i++) {
+                    if (this.numbers[i] > max) {
+                        max = this.numbers[i]
+                    }
+                }
+                return "Nilai max adalah " + max
+            }
+        }
+
+        const hasil = document.getElementById("hasil")
+        let bil = new Bilangan(6, -3, 1)
+        hasil.innerHTML = bil.minValue() + "<br>" + bil.maxValue(6)
+    </script>
+</body>
+</html>
