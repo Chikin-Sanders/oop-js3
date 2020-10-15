@@ -29,6 +29,12 @@
             get getUmur() {
                 return this.umur
             }
+            get getNamaLengkap() {
+                return this.namaDepan + " " + this.namaBelakang
+            }
+            tampil = () => {
+                return this.getNamaLengkap
+            }
         }
 
         objMhs = new Mahasiswa("001", "Aziz", "Hussein", 24)
@@ -48,6 +54,8 @@
             "Nama Belakang = " + objMhs2.getNamaBelakang + "<br>" +
             "Umur = " + objMhs2.getUmur+ "<br>"
         hasil.innerHTML = dataMhs
+
+        alert(objMhs2.tampil())
     </script>
 </body>
 </html>
